@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Demo\DemoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,14 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::controller(DemoController::class)->group(function(){
-
-    Route::get('/about', 'Index')->name('about.page')->middleware('check');
-    Route::get('/contact','ContactMethod')->name('contact.page');
-
-});
-
-
-
-
+require __DIR__.'/auth.php';
