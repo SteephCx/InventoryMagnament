@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Register | MYSI </title>
+        <title>Registro | MYSI </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
@@ -36,7 +36,7 @@
                             </div>
                         </div>
 
-                        <h4 class="text-muted text-center font-size-18"><b>Register</b></h4>
+                        <h4 class="text-muted text-center font-size-18"><b>Registrar</b></h4>
 
                         <div class="p-3">
     <form class="form-horizontal mt-3" method="POST" action="{{ route('register') }}">
@@ -45,34 +45,34 @@
         <div class="form-group mb-3 row">
             <div class="col-12">
                 <input class="form-control" type="name" name="name" required="" id="name"
-                 placeholder="Name">
+                 placeholder="Nombre">
             </div>
         </div>
 
         <div class="form-group mb-3 row">
             <div class="col-12">
                 <input class="form-control" type="username" name="username" required="" id="username"
-                 placeholder="Username" >
+                 placeholder="Usuario" >
             </div>
         </div>
 
         <div class="form-group mb-3 row">
             <div class="col-12">
                 <input class="form-control" type="email" required="" id="email"
-                 placeholder="Email" name="email">
+                 placeholder="Correo electronico" name="email">
             </div>
         </div>
 
         <div class="form-group mb-3 row">
             <div class="col-12">
                 <input class="form-control" type="password" required="" id="password"
-                 placeholder="Password" name="password">
+                 placeholder="Contraseña" name="password">
             </div>
         </div>
         <div class="form-group mb-3 row">
             <div class="col-12">
                 <input class="form-control" type="password" required="" id="password_confirmation"
-                 placeholder="Password Confirmation" name="password_confirmation" >
+                 placeholder="Confirmar contraseña" name="password_confirmation" >
             </div>
         </div>
 
@@ -85,13 +85,13 @@
 
         <div class="form-group text-center row mt-3 pt-1">
             <div class="col-12">
-                <button class="btn btn-info w-100 waves-effect waves-light" type="submit">Register</button>
+                <button class="btn btn-info w-100 waves-effect waves-light" type="submit">Registrarse</button>
             </div>
         </div>
 
         <div class="form-group mt-2 mb-0 row">
             <div class="col-12 mt-3 text-center">
-                <a href="{{route('login')}}" class="text-muted">Already have account?</a>
+                <a href="{{route('login')}}" class="text-muted">Ya tienes una cuenta?</a>
             </div>
         </div>
     </form>
