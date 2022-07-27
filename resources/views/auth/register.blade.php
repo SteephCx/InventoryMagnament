@@ -26,6 +26,8 @@
             <div class="container-fluid p-0">
                 <div class="card">
                     <div class="card-body">
+                        <x-auth-session-status class="mb-4" :status="session('status')" />
+
 
                         <div class="text-center mt-4">
                             <div class="mb-3">

@@ -26,6 +26,8 @@
             <div class="container-fluid p-0">
                 <div class="card">
                     <div class="card-body">
+                        <!-- Validation Errors -->
+                         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
                         <div class="text-center mt-4">
                             <div class="mb-3">
@@ -35,6 +37,8 @@
                                 </a>
                             </div>
                         </div>
+                        <!-- Session Status -->
+
 
                         <h4 class="text-muted text-center font-size-18"><b>Iniciar Sesión</b></h4>
 
@@ -70,7 +74,7 @@
                                         <a href="{{ route('register') }}" class="text-muted"><i class="mdi mdi-account-circle"></i> Crear una cuenta</a>
                                     </div>
                                 </div>
-                            </form>
+                                </form>
                         </div>
                         <!-- end -->
                     </div>

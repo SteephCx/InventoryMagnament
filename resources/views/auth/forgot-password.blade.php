@@ -1,36 +1,91 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!doctype html>
+<html lang="en">
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-        </div>
+    <head>
 
-        <!-- Session Status -->
+        <meta charset="utf-8" />
+        <title>Recover Password |mysi </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesdesign" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico')}}">
+
+        <!-- Bootstrap Css -->
+        <link href="{{ asset('backend/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="{{ asset('backend/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="{{ asset('backend/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body class="auth-body-bg">
+        <div class="bg-overlay"></div>
+        <div class="wrapper-page">
+            <div class="container-fluid p-0">
+                <div class="card">
+                    <div class="card-body">
+
+                          <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
-        <!-- Validation Errors -->
+                        <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        
+                        <div class="text-center mt-4">
+                            <div class="mb-3">
+                                <a href="{{route('login')}}" class="auth-logo">
+                                    <img src="{{ asset('backend/assets/images/logo-dark.png')}}" height="30" class="logo-dark mx-auto" alt="">
+                                    <img src="{{ asset('backend/assets/images/logo-light.png')}}" height="30" class="logo-light mx-auto" alt="">
+                                </a>
+                            </div>
+                        </div>
 
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
+                        <h4 class="text-muted text-center font-size-18"><b>Restablecer contraseña</b></h4>
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+                        <div class="p-3">
+                                <form method="POST"  class="form-horizontal mt-3" action="{{ route('password.email') }}">
+                                    @csrf
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+
+                                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                               Introduce tu <strong>Correo electronico</strong> y sigue las instrucciones que se envian!
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" id="email" name="email" type="email" required="" placeholder="Correo electronico">
+                                    </div>
+                                </div>
+
+                                <div class="form-group pb-2 text-center row mt-3">
+                                    <div class="col-12">
+                                        <button class="btn btn-info w-100 waves-effect waves-light" type="submit">Enviar correo</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- end cardbody -->
+                </div>
+                <!-- end card -->
             </div>
+            <!-- end container -->
+        </div>
+        <!-- end -->
 
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+
+        <!-- JAVASCRIPT -->
+        <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js')}}"></script>
+        <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{ asset('backend/assets/libs/metismenu/metisMenu.min.js')}}"></script>
+        <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js')}}"></script>
+        <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js')}}"></script>
+
+        <script src="{{ asset('backend/assets/js/app.js')}}"></script>
+
+    </body>
+</html>
+
