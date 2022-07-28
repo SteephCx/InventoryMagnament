@@ -28,8 +28,8 @@ Route::controller(DemoController::class)->group(function(){
 //Admin all Route
 Route::controller(AdminController::class)->group(function(){
     Route::get('/admin/logout', 'destroy')->name('admin.logout');
-    Route::get('/admin/logout', 'destroy')->name('admin.logout');
-
+    Route::get('/admin/profile', 'profile')->name('admin.profile');
+    Route::get('/edit/profile', 'EditProfile')->name('edit.profile');
 });
 
 Route::controller(OrdenTrabajoController::class)->group(function (){
